@@ -4,20 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BBG Boilerplate</title>
-
+    <title>7Tunnels ANG Admin</title>
+    <link rel="icon" href="@__PATHVAR__@images/favicon.ico" type="image/icon">
     <!-- Styles Start -->
     <link rel='stylesheet' href='@__PATHVAR__@css/main-min.css'>
     <!-- Styles End -->
 </head>
 <body>
-    <h1>BBG Boilerplate</h1>
-    <ul>
-        <li>Browserify</li>
-        <li>Babel</li>
-        <li>Gulp</li>
-    </ul>
-    <p>A basic boilerplate setup</p>
+    <div class="main">
+        <nav class="nav">
+            <div class="logo-wrapper">
+                <a id="logo-button">
+                    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 26.069">
+                        <path class="fill-red" d="M1.5,0H34.363L7.886,26.069,0,23.051,16.9,6.517H1.5Z" />
+                        <path class="fill-white" d="M35.064,8.46h-.982L15.41,26.721l.835.269Z" transform="translate(-9.133 -5.014)" />
+                        <path class="fill-white" d="M3.68,14.81H53.236v4.183H41.118V30.236H36.983V18.993H3.68Z" transform="translate(-2.181 -8.777)" />
+                        <path class="fill-white" d="M157.316,26.26V14.81h4.134V30.236H136.644a3.691,3.691,0,0,1-1.3-.24,3.4,3.4,0,0,1-1.128-.7,3.283,3.283,0,0,1-.778-1.132,3.821,3.821,0,0,1-.285-1.523V14.83h4.1V25.274a1.222,1.222,0,0,0,.191.713.57.57,0,0,0,.477.273Z" transform="translate(-78.913 -8.777)" />
+                        <path class="fill-white" d="M214.224,14.81l20.383,10.876V14.81h4.139V30.236h-3.817L214.542,19.388V30.236h-4.1V14.81Z" transform="translate(-124.721 -8.777)" />
+                        <path class="fill-white" d="M291.514,14.81,311.9,25.686V14.81h4.134V30.236h-3.817L291.832,19.388V30.236h-4.1V14.81Z" transform="translate(-170.528 -8.777)" />
+                        <path class="fill-white" d="M369.126,24.509V26.26h24.2v3.976H365.02V14.81h28.305v3.976h-24.2V20.5h24.2v4Z" transform="translate(-216.336 -8.777)" />
+                        <path class="fill-white" d="M470.609,26.29v3.976H445.8a3.708,3.708,0,0,1-1.3-.24,3.4,3.4,0,0,1-1.128-.7,3.342,3.342,0,0,1-.786-1.132,3.821,3.821,0,0,1-.285-1.523V14.86h4.1V25.3a1.087,1.087,0,0,0,.22.713.676.676,0,0,0,.542.273Z" transform="translate(-262.136 -8.807)" />
+                        <path class="fill-white" d="M543.015,26.26a.839.839,0,0,0,.542-.175.705.705,0,0,0,.244-.607v-.285a.7.7,0,0,0-.175-.554.863.863,0,0,0-.558-.143H523.109a3.633,3.633,0,0,1-1.32-.24,3.208,3.208,0,0,1-1.1-.7,3.434,3.434,0,0,1-.766-1.128,3.826,3.826,0,0,1-.285-1.527V18.4a3.823,3.823,0,0,1,.285-1.523,3.449,3.449,0,0,1,.766-1.132,3.257,3.257,0,0,1,1.1-.7,3.633,3.633,0,0,1,1.32-.24h24.847v3.976H524.445a.892.892,0,0,0-.542.143.671.671,0,0,0-.191.558v.289a.664.664,0,0,0,.224.574.892.892,0,0,0,.538.159h19.959a3.638,3.638,0,0,1,1.336.253,3.307,3.307,0,0,1,1.112.733,3.564,3.564,0,0,1,.745,1.132,3.748,3.748,0,0,1,.289,1.495v2.513a3.823,3.823,0,0,1-.289,1.523,3.42,3.42,0,0,1-.762,1.132,3.212,3.212,0,0,1-1.112.7,3.805,3.805,0,0,1-1.336.24H519.61V26.26Z" transform="translate(-307.956 -8.777)" />
+                    </svg>
+                </a>
+            </div>
+            <div class="button-wrapper">
+                <div class="nav-buttons">
+                    <button id="nav-home" class="btn home">
+                        <svg class="btn-icon home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.5 20">
+                            <path id="home-icon" class="fill-white" d="M9.4,20V12.9h4.7V20H20V10.6h3.5L11.8,0,0,10.6H3.5V20Z" />
+                        </svg>
+                    </button>
+                    <button id="nav-prev" class="btn prev">
+                        <svg class="btn-icon prev-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.3 20">
+                            <path id="prev-icon" class="fill-white" d="M52.9,17.6,45.3,10l7.6-7.7L50.6,0l-10,10,10,10Z" transform="translate(-40.6)" />
+                        </svg>
+                    </button>
+                    <button id="nav-next" class="btn next">
+                        <svg class="btn-icon next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.4 20">
+                            <path id="next-icon" class="fill-white" d="M74,2.4,81.6,10,74,17.6,76.4,20l10-10L76.4,0Z" transform="translate(-74)" />
+                        </svg>
+                    </button>
+                </div>
+                <button id="btn-admin" class="admin">
+                    Admin
+                    <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.941 13.9">
+                        <path id="admin-icon" class="fill-white" d="M158.6,3.9a2.8,2.8,0,0,0-2.8,2.8,2.862,2.862,0,0,0,2.8,2.8,2.8,2.8,0,1,0,0-5.6m0,7c-1.9,0-5.6.9-5.6,2.8v1.4h7.8a1.7,1.7,0,0,1-.1-.7,4.719,4.719,0,0,1,1-3,28.678,28.678,0,0,0-3.1-.5m6.4,0c-.1,0-.1.1-.2.1l-.1.9a2.092,2.092,0,0,0-.6.4l-.8-.4c-.1,0-.2,0-.2.1l-.7,1.2c-.1.1,0,.1.1.2l.8.6v.7l-.8.6c-.1.1-.1.1-.1.2l.7,1.2c.1.1.1.1.2.1l.8-.4c.2.1.4.3.6.4l.1.9c0,.1.1.1.2.1h1.4a.1.1,0,0,0,.1-.1l.1-.9a2.092,2.092,0,0,0,.6-.4l.8.4c.1,0,.2,0,.2-.1l.7-1.2c.1-.1,0-.1-.1-.2l-.8-.6V14l.8-.6c.1-.1.1-.1.1-.2l-.7-1.2c-.1-.1-.1-.1-.2-.1l-.8.4a2.092,2.092,0,0,0-.6-.4l-.1-.9a.1.1,0,0,0-.1-.1m-.7,2.5a1.1,1.1,0,1,1-1.1,1.1,1.11,1.11,0,0,1,1.1-1.1Z" transform="translate(-153 -3.9)" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <section class="content-panels">
+            <div id="panel-home" class="panel panel-home">
+                <div class="panel-body">
+                    <div class="row">
+                        <h3>
+                            Connection
+                        </h3>
+                        <div class="connection-progress">
+                            <div class="connection-stage">
+                                <svg class="connection-icon device-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 19.2">
+                                    <path class="fill-white" d="M23.4,15.6H14.3a1.216,1.216,0,0,1-1.2,1.2H10.8a1.287,1.287,0,0,1-1.2-1.2H.6a.645.645,0,0,0-.6.6v.6a2.433,2.433,0,0,0,2.4,2.4H21.6A2.433,2.433,0,0,0,24,16.8v-.6A.645.645,0,0,0,23.4,15.6ZM21.6,1.8A1.793,1.793,0,0,0,19.8,0H4.2A1.793,1.793,0,0,0,2.4,1.8V14.4H21.6ZM19.2,12H4.8V2.4H19.2Z" />
+                                </svg>
+                            </div>
+                            <div id="status-1" class="connection-status connected">&nbsp;</div>
+                            <div class="connection-stage">
+                                <svg class="connection-icon device-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20.05">
+                                    <g transform="translate(-52 0.05)">
+                                        <path class="fill-white" d="M74.5,20h-21A1.538,1.538,0,0,1,52,18.5v-3A1.538,1.538,0,0,1,53.5,14h21A1.538,1.538,0,0,1,76,15.5v3A1.538,1.538,0,0,1,74.5,20Zm-2.3-4.1A1.1,1.1,0,1,0,73.3,17,1.049,1.049,0,0,0,72.2,15.9Zm-3,0A1.1,1.1,0,1,0,70.3,17,1.049,1.049,0,0,0,69.2,15.9Z" />
+                                        <path class="fill-white" d="M71.6,9.8a.746.746,0,0,0,0-.9,11.207,11.207,0,0,0-15.1,0,.561.561,0,0,0,0,.9l1.3,1.3a.608.608,0,0,0,.8,0,8.481,8.481,0,0,1,11,0,.608.608,0,0,0,.8,0Z" />
+                                        <path class="fill-white" d="M75.8,5.5a.746.746,0,0,0,0-.9,17.3,17.3,0,0,0-23.6,0,.631.631,0,0,0,0,.9l1.3,1.3a.608.608,0,0,0,.8,0,14.212,14.212,0,0,1,19.4,0,.608.608,0,0,0,.8,0l1.3-1.3Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div id="status-2" class="connection-status connected">&nbsp;</div>
+                            <div class="connection-stage">
+                                <svg class="connection-icon device-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18">
+                                    <g transform="translate(-104 -1)">
+                                        <path class="fill-white" d="M126.5,7h-21A1.538,1.538,0,0,1,104,5.5v-3A1.538,1.538,0,0,1,105.5,1h21A1.538,1.538,0,0,1,128,2.5v3A1.538,1.538,0,0,1,126.5,7Zm-2.3-4.1A1.1,1.1,0,1,0,125.3,4,1.049,1.049,0,0,0,124.2,2.9Zm-3,0A1.1,1.1,0,1,0,122.3,4,1.049,1.049,0,0,0,121.2,2.9Z" />
+                                        <path class="fill-white" d="M128,19H104V18h24ZM115,9h-1v6H104v1h11Zm2,7h11V15H118V9h-1Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div id="status-3" class="connection-status connected">&nbsp;</div>
+                            <div class="connection-stage">
+                                <svg class="connection-icon device-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path class="fill-white" d="M166,0a10,10,0,1,0,10,10A10.029,10.029,0,0,0,166,0Zm6.9,6H170a17.832,17.832,0,0,0-1.4-3.6A8.049,8.049,0,0,1,172.9,6ZM166,2a13.427,13.427,0,0,1,1.9,4h-3.8A14.7,14.7,0,0,1,166,2Zm-7.7,10a6.448,6.448,0,0,1-.3-2,6.448,6.448,0,0,1,.3-2h3.4a13.4,13.4,0,0,0-.1,2c0,.7.1,1.3.1,2Zm.8,2H162a15.806,15.806,0,0,0,1.4,3.6A8.049,8.049,0,0,1,159.1,14ZM162,6h-2.9a8.428,8.428,0,0,1,4.3-3.6A26.709,26.709,0,0,0,162,6Zm4,12a13.427,13.427,0,0,1-1.9-4h3.8A14.7,14.7,0,0,1,166,18Zm2.3-6h-4.7a13.551,13.551,0,0,1-.2-2,12.311,12.311,0,0,1,.2-2h4.7a12.31,12.31,0,0,1,.2,2A13.554,13.554,0,0,1,168.3,12Zm.3,5.6A14.187,14.187,0,0,0,170,14h2.9A8.5,8.5,0,0,1,168.6,17.6Zm1.8-5.6a13.4,13.4,0,0,0,.1-2c0-.7-.1-1.3-.1-2h3.4a6.448,6.448,0,0,1,.3,2,6.448,6.448,0,0,1-.3,2Z" transform="translate(-156)" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>
+                            Activity
+                        </h3>
+                        <div class="indicator activity">
+                            <div id="activity-in" class="bar in">
+                                <div data-indicator="0" class="indicator-light c-0"></div>
+                                <div data-indicator="1" class="indicator-light c-1"></div>
+                                <div data-indicator="2" class="indicator-light c-2"></div>
+                                <div data-indicator="3" class="indicator-light c-3"></div>
+                                <div data-indicator="4" class="indicator-light c-4"></div>
+                                <div data-indicator="5" class="indicator-light c-5"></div>
+                                <div data-indicator="6" class="indicator-light c-6"></div>
+                                <div data-indicator="7" class="indicator-light c-7"></div>
+                                <div data-indicator="8" class="indicator-light c-8"></div>
+                                <div data-indicator="9" class="indicator-light c-9"></div>
+                            </div>
+                            <div class="bar out">
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light yellow"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>RCP Pool</h3>
+                        <div class="indicator activity">
+                            <div class="bar in">
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                            </div>
+                            <div class="bar out">
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="about" id="about">
+        <div class="title">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 26.069">
+                <path class="fill-red" d="M1.5,0H34.363L7.886,26.069,0,23.051,16.9,6.517H1.5Z" />
+                <path class="fill-white" d="M35.064,8.46h-.982L15.41,26.721l.835.269Z" transform="translate(-9.133 -5.014)" />
+                <path class="fill-white" d="M3.68,14.81H53.236v4.183H41.118V30.236H36.983V18.993H3.68Z" transform="translate(-2.181 -8.777)" />
+                <path class="fill-white" d="M157.316,26.26V14.81h4.134V30.236H136.644a3.691,3.691,0,0,1-1.3-.24,3.4,3.4,0,0,1-1.128-.7,3.283,3.283,0,0,1-.778-1.132,3.821,3.821,0,0,1-.285-1.523V14.83h4.1V25.274a1.222,1.222,0,0,0,.191.713.57.57,0,0,0,.477.273Z" transform="translate(-78.913 -8.777)" />
+                <path class="fill-white" d="M214.224,14.81l20.383,10.876V14.81h4.139V30.236h-3.817L214.542,19.388V30.236h-4.1V14.81Z" transform="translate(-124.721 -8.777)" />
+                <path class="fill-white" d="M291.514,14.81,311.9,25.686V14.81h4.134V30.236h-3.817L291.832,19.388V30.236h-4.1V14.81Z" transform="translate(-170.528 -8.777)" />
+                <path class="fill-white" d="M369.126,24.509V26.26h24.2v3.976H365.02V14.81h28.305v3.976h-24.2V20.5h24.2v4Z" transform="translate(-216.336 -8.777)" />
+                <path class="fill-white" d="M470.609,26.29v3.976H445.8a3.708,3.708,0,0,1-1.3-.24,3.4,3.4,0,0,1-1.128-.7,3.342,3.342,0,0,1-.786-1.132,3.821,3.821,0,0,1-.285-1.523V14.86h4.1V25.3a1.087,1.087,0,0,0,.22.713.676.676,0,0,0,.542.273Z" transform="translate(-262.136 -8.807)" />
+                <path class="fill-white" d="M543.015,26.26a.839.839,0,0,0,.542-.175.705.705,0,0,0,.244-.607v-.285a.7.7,0,0,0-.175-.554.863.863,0,0,0-.558-.143H523.109a3.633,3.633,0,0,1-1.32-.24,3.208,3.208,0,0,1-1.1-.7,3.434,3.434,0,0,1-.766-1.128,3.826,3.826,0,0,1-.285-1.527V18.4a3.823,3.823,0,0,1,.285-1.523,3.449,3.449,0,0,1,.766-1.132,3.257,3.257,0,0,1,1.1-.7,3.633,3.633,0,0,1,1.32-.24h24.847v3.976H524.445a.892.892,0,0,0-.542.143.671.671,0,0,0-.191.558v.289a.664.664,0,0,0,.224.574.892.892,0,0,0,.538.159h19.959a3.638,3.638,0,0,1,1.336.253,3.307,3.307,0,0,1,1.112.733,3.564,3.564,0,0,1,.745,1.132,3.748,3.748,0,0,1,.289,1.495v2.513a3.823,3.823,0,0,1-.289,1.523,3.42,3.42,0,0,1-.762,1.132,3.212,3.212,0,0,1-1.112.7,3.805,3.805,0,0,1-1.336.24H519.61V26.26Z" transform="translate(-307.956 -8.777)" />
+            </svg>
+            <h4>Encryption Beyond Mathematics</h4>
+        </div>
+        <div class="patents">
+            <p>7Tunnels<sup>&reg;</sup> Encryption Technology</p>
+            <p>Protected Under US Patent 10,003,457</p>
+            <p>Other U.S. &amp; Intl. Patents Pending</p>
+        </div>
+        <div class="location">
+            <p>Property of 7Tunnels, Inc.</p>
+            <p>Park City, Utah USA ∙ www.7Tunnels.com</p>
+        </div>
+        <button class="btn close" id="aboutClose">Close</button>
+    </div>
+    <div class="load loading" id="load">
+        <svg class="flag-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140.289">
+            <rect class="fill-red" width="240" height="20.035" transform="translate(0 120.254)" />
+            <rect class="fill-white" width="240" height="20.035" transform="translate(0 100.219)" />
+            <rect class="fill-white" width="240" height="20.035" transform="translate(0 60.105)" />
+            <rect class="fill-red" width="240" height="20.035" transform="translate(0 40.07)" />
+            <rect class="fill-white" width="240" height="20.035" transform="translate(0 20.035)" />
+            <rect class="fill-red" width="240" height="20.035" />
+            <rect class="fill-blue" width="120" height="80.184" />
+            <path class="fill-woodsmoke" d="M128.22,22,48.38,86.138,34.7,81.667,98.3,30.68h-56L44.26,22Z" transform="translate(-20.82 -12.355)" />
+            <rect class="fill-red" width="240" height="20.035" transform="translate(0 80.184)" />
+        </svg>
+        <div class="spinner-container">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <!-- JavaScript Start -->
     <script src="@__PATHVAR__@js/bundle.js"></script>
     <!-- JavaScript End -->

@@ -1,6 +1,6 @@
-# BBG Boilerplate
+# 7T-ANG-UI
 
-Boilerplate web dev and build package using Browserify, Babel, and Gulp (with SASS thrown in).
+7Tunnels ANG User Interface
 
 ## Setup 
 	npm install

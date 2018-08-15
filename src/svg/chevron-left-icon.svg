@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.3 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="chevron-left_2_" class="cls-1" d="M52.9,17.6,45.3,10l7.6-7.7L50.6,0l-10,10,10,10Z" transform="translate(-40.6)"/>
+</svg>
