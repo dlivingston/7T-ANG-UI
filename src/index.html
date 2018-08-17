@@ -222,42 +222,96 @@
                     </div>
                 </div>
             </div>
-            <div id="panel-detail" class="panel panel-detail next">
+            <div id="panel-con-detail" class="panel panel-con-detail next">
                 <div class="panel-head">
                     <h2>Connection Detail</h2>
+                    <h3>ANG &amp; CNG</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <h3>
-                             7T ANG &amp; <br>AIRCRAFT
+                             DURATION
                         </h3>
-                        <div class="indicator">
-                            <div class="bar">
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light green"></div>
-                                <div class="indicator-light"></div>
-                                <div class="indicator-light"></div>
-                            </div>
+                        <div class="led-display blue">
+                             12:26:54
                         </div>
                     </div>
                     <div class="row">
                         <h3>
-                             AIRCRAFT &amp; <br>7T CNG
+                             DROP-OUTS
                         </h3>
-                        <div class="indicator">
-                            <div class="bar">
-                                <div class="indicator-light yellow"></div>
-                                <div class="indicator-light yellow"></div>
-                                <div class="indicator-light yellow"></div>
-                                <div class="indicator-light yellow"></div>
-                                <div class="indicator-light yellow"></div>
-                                <div class="indicator-light yellow"></div>
+                        <div class="led-display blue">
+                            3
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>END-POINTS</h3>
+                        <div class="led-display blue">
+                            4
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-act-detail" class="panel panel-act-detail next">
+                <div class="panel-head">
+                    <h2>ACTIVITY DETAIL</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="grid">
+                        <h3 class="title-row col-1">TIME <span class="silver">(LAST)</span></h3>
+                        <h3 class="title-row col-min">MIN</h3>
+                        <h3 class="title-row col-hr">HR</h3>
+                        <h3 class="title-row col-day">DAY</h3>
+                        <h3 class="row-bytes col-1">BYTES</h3>
+                        <h3 class="row-packets col-1">PACKETS</h3>
+                        <h4 class="row-bytes-in col-inout">IN</h4>
+                        <div class="led-display blue row-bytes-in col-min">8.3K</div>
+                        <div class="led-display blue row-bytes-in col-hr">42.7M</div>
+                        <div class="led-display blue row-bytes-in col-day">5.8G</div>
+                        <h4 class="row-bytes-out col-inout">OUT</h4>
+                        <div class="led-display blue row-bytes-out col-min">94.2K</div>
+                        <div class="led-display blue row-bytes-out col-hr">101.7M</div>
+                        <div class="led-display blue row-bytes-out col-day">16.5G</div>
+                        <h4 class="row-packets-in col-inout">IN</h4>
+                        <div class="led-display blue row-packets-in col-min">0.3K</div>
+                        <div class="led-display blue row-packets-in col-hr">11.2M</div>
+                        <div class="led-display blue row-packets-in col-day">1.3G</div>
+                        <h4 class="row-packets-out col-inout">OUT</h4>
+                        <div class="led-display blue row-packets-out col-min">8.3K</div>
+                        <div class="led-display blue row-packets-out col-hr">24.4M</div>
+                        <div class="led-display blue row-packets-out col-day">4.9G</div>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-cng-detail" class="panel panel-cng-detail next">
+                <div class="panel-head">
+                    <h2>CNG ACTIVITY DETAIL</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <h3>RCP Pool</h3>
+                        <div class="indicator activity">
+                            <div class="bar in">
+                                <h4>In</h4>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                            </div>
+                            <div class="bar out">
+                                <h4>Out</h4>
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light red"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
                                 <div class="indicator-light"></div>
                                 <div class="indicator-light"></div>
                                 <div class="indicator-light"></div>
@@ -266,9 +320,47 @@
                         </div>
                     </div>
                     <div class="row">
-                        <h3>7T CNG &amp; <br>INTERNET</h3>
-                        <div class="indicator">
-                            <div class="bar">
+                        <h3>Status</h3>
+                        <div class="display-wrapper">
+                            <div class="in">
+                                <h4>IN</h4>
+                                <div class="led-display green">
+                                    212 Mbps
+                                </div>
+                            </div>
+                            <div class="out">
+                                <h4>OUT</h4>
+                                <div class="led-display green">
+                                    243 Mbps
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-rcp-detail" class="panel panel-rcp-detail next">
+                <div class="panel-head">
+                    <h2>ANG RCP POOL DETAIL</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <h3>Quantity</h3>
+                        <div class="indicator activity">
+                            <div class="bar in">
+                                <h4>In</h4>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light green"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                                <div class="indicator-light"></div>
+                            </div>
+                            <div class="bar out">
+                                <h4>Out</h4>
                                 <div class="indicator-light red"></div>
                                 <div class="indicator-light red"></div>
                                 <div class="indicator-light red"></div>
@@ -279,6 +371,23 @@
                                 <div class="indicator-light"></div>
                                 <div class="indicator-light"></div>
                                 <div class="indicator-light"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>EST. TIME <br><span class="silver">(ACTIVE USE)</span></h3>
+                        <div class="display-wrapper">
+                            <div class="in">
+                                <h4>IN</h4>
+                                <div class="led-display blue">
+                                    641 HOURS
+                                </div>
+                            </div>
+                            <div class="out">
+                                <h4>OUT</h4>
+                                <div class="led-display blue">
+                                    511 HOURS
+                                </div>
                             </div>
                         </div>
                     </div>
