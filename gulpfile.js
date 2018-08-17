@@ -33,7 +33,7 @@ var dist = {
 }
 
 // set @__PATHVAR__@ Here
-var deployPath = '/';
+var deployPath = '/7tunnels/';
 
 watchify.args.debug = true;
 var devBundler = watchify(browserify('./src/js/main.js', watchify.args));

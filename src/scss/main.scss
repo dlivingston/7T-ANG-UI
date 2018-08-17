@@ -10,6 +10,7 @@ html {
 }
 body {
     min-height: 100%;
+    height: 100%;
     background-color: $woodsmoke;
     color: $white;
     font-family: $font-main;
@@ -17,7 +18,9 @@ body {
     padding: 0;
     overflow: hidden;
 }
-
+button {
+  outline: none;
+}
 .main {
     max-width: 1280px;
     background-color: $shark;
@@ -38,6 +41,7 @@ body {
     position: fixed;
     bottom: 0;
     border-top: 1px solid $bright-gray;
+    z-index: 50;
     .button-wrapper {
         display: flex;
         align-items: center;
@@ -49,6 +53,8 @@ body {
             height: 100%;
         }
         .btn {
+            background: transparent;
+            border: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,6 +64,12 @@ body {
             .btn-icon {
                 height: 20px;
                 display: inline-block;
+            }
+            &:disabled,
+            &[disabled] {
+                .btn-icon path {
+                    fill: $dusty-gray;
+                }
             }
         }
     }
@@ -105,21 +117,50 @@ button.admin {
 
 .content-panels {
     position: relative;
+    height: calc(100vh - 45px);
+    overflow: hidden;
 }
 .panel {
+    position: absolute;
     min-width: 320px;
+    width: 100%;
     min-height: 196px;
+    height: 196px;
     padding: 0 15px;
     background-color: $bright-gray;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     text-transform: uppercase;
+    transition: transform 0.3s linear;
+    .panel-body {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .panel-head {
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 3px;
+        }
+    }
     .row {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     h3 {
         font-size: 14px;
+    }
+    h4 {
+        margin: 0;
+        text-align: right;
+        font-size: 12px;
+        color: $silver;
+        font-weight: 500;
     }
     .connection-progress {
         display: flex;
@@ -147,6 +188,15 @@ button.admin {
             align-items: center;
         }
     }
+    &.next {
+        transform: translateX(100%);
+    }
+    &.current {
+        transform: translateX(0%);
+    }
+    &.prev {
+        transform: translateX(-100%);
+    }
 }
 
 .about {
@@ -160,7 +210,7 @@ button.admin {
     height: 100%;
     transform: translateY(100%);
     transition: transform 0.3s linear;
-    z-index: 1000;
+    z-index: 100;
     &.show {
         transform: translateY(0);
     }
@@ -210,6 +260,8 @@ button.admin {
 .indicator {
     .bar {
         display: flex;
+        align-items: center;
+        justify-content: flex-end;
         margin: 4px 0;
     }
     .indicator-light {
@@ -257,7 +309,7 @@ button.admin {
     height: 100%;
     transform: translateY(100%);
     transition: transform 0.3s linear;
-    z-index: 1000;
+    z-index: 100;
     &.loading {
         transform: translateY(0);
     }
@@ -303,6 +355,8 @@ button.admin {
     .content-panels {
         margin-top: 68px;
         padding: 30px;
+        display: flex;
+        justify-content: space-between;
     }
     .panel {
         max-width: 320px;
