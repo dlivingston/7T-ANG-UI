@@ -5,7 +5,11 @@
 ## Setup 
 	npm install
 
-## Run
+## Run Express & Socket.io Websocket Server
+
+    nodemon server.js
+
+## Run Gulp & Browserify Dev Tasks
 	
     gulp
     

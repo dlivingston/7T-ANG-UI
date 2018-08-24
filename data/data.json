@@ -1,0 +1,48 @@
+{
+    "ang_data": {
+        "connnection_status": {
+            "device": "on",
+            "ang": "on",
+            "ang_strength": 9,
+            "cng": "on",
+            "cng_strength": 5,
+            "internet": "on",
+            "internet_strength": 2
+        },
+        "activity_in":  9,
+        "activity_out": 5,
+        "rcp_pool_in": 7,
+        "rcp_pool_out": 3,
+        "connection_detail": {
+            "start": "2018-08-23T19:24:52.133Z",
+            "drop_outs": 4,
+            "end_points": 5
+        },
+        "activity_detail": {
+            "bytes_in_min": 8300,
+            "bytes_out_min": 94200,
+            "bytes_in_hr": 42789123,
+            "bytes_out_hr": 101734567,
+            "bytes_in_day": 5803234987,
+            "bytes_out_day": 16543321365,
+            "packets_in_min": 8300,
+            "packets_out_min": 94200,
+            "packets_in_hr": 42789123,
+            "packets_out_hr": 101734567,
+            "packets_in_day": 5803234987,
+            "packets_out_day": 16543321365
+        },
+        "cng_detail": {
+            "rcp_pool_in": 7,
+            "rcp_pool_out": 5,
+            "status_in": 212,
+            "status_out": 243
+        },
+        "ang_rcp_pool_detail": {
+            "quantity_in": 8,
+            "quantity_out": 4,
+            "time_in": 420,
+            "time_out": 711
+        }
+    }
+}

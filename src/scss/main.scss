@@ -369,7 +369,12 @@ button.admin {
         background: $shark;
     }
 }
-
+#cng_status_in,
+#cng_status_out,
+#ang_time_in,
+#ang_time_out {
+    text-transform: none;
+}
 .indicator {
     .bar {
         display: flex;
@@ -385,18 +390,18 @@ button.admin {
         margin-left: 4px;
         background-color: $bright-gray;
         box-shadow: inset 0px 0px 6px 3px darken($bright-gray, 5%);
-        &.green {
-            background-color: $green;
-            box-shadow: inset 0px 0px 6px 3px darken($green, 5%);
-        }
-        &.yellow {
-            background-color: $yellow;
-            box-shadow: inset 0px 0px 6px 3px darken($yellow, 5%);
-        }
-        &.red {
-            background-color: $crimson;
-            box-shadow: inset 0px 0px 6px 3px darken($crimson, 5%);
-        }
+        // &.green {
+        //     background-color: $green;
+        //     box-shadow: inset 0px 0px 6px 3px darken($green, 5%);
+        // }
+        // &.yellow {
+        //     background-color: $yellow;
+        //     box-shadow: inset 0px 0px 6px 3px darken($yellow, 5%);
+        // }
+        // &.red {
+        //     background-color: $crimson;
+        //     box-shadow: inset 0px 0px 6px 3px darken($crimson, 5%);
+        // }
         &.on {
             &.c-0 { background-color: $grad-0; box-shadow: inset 0px 0px 6px 3px darken($grad-0, 5%); }
             &.c-1 { background-color: $grad-1; box-shadow: inset 0px 0px 6px 3px darken($grad-1, 5%); }
@@ -408,6 +413,9 @@ button.admin {
             &.c-7 { background-color: $grad-7; box-shadow: inset 0px 0px 6px 3px darken($grad-7, 5%); }
             &.c-8 { background-color: $grad-8; box-shadow: inset 0px 0px 6px 3px darken($grad-8, 5%); }
             &.c-9 { background-color: $grad-9; box-shadow: inset 0px 0px 6px 3px darken($grad-9, 5%); }
+            &.green { background-color: $green; box-shadow: inset 0px 0px 6px 3px darken($green, 5%); }
+            &.red { background-color: $crimson; box-shadow: inset 0px 0px 6px 3px darken($crimson, 5%); }
+            &.yellow { background-color: $yellow; box-shadow: inset 0px 0px 6px 3px darken($yellow, 5%); }
         }
     }
 }
