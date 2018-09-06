@@ -4,14 +4,14 @@
             "device": "on",
             "ang": "on",
             "ang_strength": 9,
-            "cng": "on",
+            "cng": "connecting",
             "cng_strength": 5,
-            "internet": "on",
+            "internet": "off",
             "internet_strength": 2
         },
         "activity_in":  9,
         "activity_out": 5,
-        "rcp_pool_in": 7,
+        "rcp_pool_in": 9,
         "rcp_pool_out": 3,
         "connection_detail": {
             "start": "2018-08-23T19:24:52.133Z",

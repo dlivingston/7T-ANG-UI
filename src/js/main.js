@@ -1,5 +1,6 @@
 import io from 'socket.io-client'
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect('localhost:8080');
+// var socket = io.connect('http://35.168.184.150:8080');
 
 //***  DOM constants  ***//
 const loadPanel = document.getElementById("load");
@@ -10,7 +11,13 @@ const btnHome = document.getElementById("nav-home");
 const btnPrev = document.getElementById("nav-prev");
 const btnNext = document.getElementById("nav-next");
 const btnAdmin = document.getElementById("btn-admin");
+const btnAdminClose = document.getElementById("btnAdminClose");
+const btnAdminLogin = document.getElementById("btnAdminLogin");
 const contentPanels = document.querySelectorAll('.content-panels .panel');
+const adminPanels = document.getElementById("adminPanels");
+const connectionStatus1 = document.getElementById("status-1");
+const connectionStatus2 = document.getElementById("status-2");
+const connectionStatus3 = document.getElementById("status-3");
 
 const activityIndicatorIn = [].slice.call(document.querySelectorAll('#activity-in .indicator-light'));
 const activityIndicatorOut = [].slice.call(document.querySelectorAll('#activity-out .indicator-light'));
@@ -51,6 +58,66 @@ let angData = {};
 socket.on('ang_data', (data) => {
     
     angData = data.ang_data;
+    if (angData.connnection_status.ang === 'on') {
+        connectionStatus1.classList.add('on');
+        connectionStatus1.classList.remove('error');
+        connectionStatus1.classList.remove('connecting');
+    }
+    if (angData.connnection_status.ang === 'error') {
+        connectionStatus1.classList.remove('on');
+        connectionStatus1.classList.add('error');
+        connectionStatus1.classList.remove('connecting');
+    }
+    if (angData.connnection_status.ang === 'connecting') {
+        connectionStatus1.classList.remove('on');
+        connectionStatus1.classList.remove('error');
+        connectionStatus1.classList.add('connecting');
+    }
+    if (angData.connnection_status.ang === 'off') {
+        connectionStatus1.classList.remove('on');
+        connectionStatus1.classList.remove('error');
+        connectionStatus1.classList.remove('connecting');
+    }
+    if (angData.connnection_status.cng === 'on') {
+        connectionStatus2.classList.add('on');
+        connectionStatus2.classList.remove('error');
+        connectionStatus2.classList.remove('connecting');
+    }
+    if (angData.connnection_status.cng === 'error') {
+        connectionStatus2.classList.remove('on');
+        connectionStatus2.classList.add('error');
+        connectionStatus2.classList.remove('connecting');
+    }
+    if (angData.connnection_status.cng === 'connecting') {
+        connectionStatus2.classList.remove('on');
+        connectionStatus2.classList.remove('error');
+        connectionStatus2.classList.add('connecting');
+    }
+    if (angData.connnection_status.cng === 'off') {
+        connectionStatus2.classList.remove('on');
+        connectionStatus2.classList.remove('error');
+        connectionStatus2.classList.remove('connecting');
+    }
+    if (angData.connnection_status.internet === 'on') {
+        connectionStatus3.classList.add('on');
+        connectionStatus3.classList.remove('error');
+        connectionStatus3.classList.remove('connecting');
+    }
+    if (angData.connnection_status.internet === 'error') {
+        connectionStatus3.classList.remove('on');
+        connectionStatus3.classList.add('error');
+        connectionStatus3.classList.remove('connecting');
+    }
+    if (angData.connnection_status.internet === 'connecting') {
+        connectionStatus3.classList.remove('on');
+        connectionStatus3.classList.remove('error');
+        connectionStatus3.classList.add('connecting');
+    }
+    if (angData.connnection_status.internet === 'off') {
+        connectionStatus3.classList.remove('on');
+        connectionStatus3.classList.remove('error');
+        connectionStatus3.classList.remove('connecting');
+    }
     for (let i = 0; i < 10; i++) {
         (activityIndicatorIn[i].dataset.indicator <= angData.activity_in) ? activityIndicatorIn[i].classList.add('on') :  activityIndicatorIn[i].classList.remove('on');
         (activityIndicatorOut[i].dataset.indicator <= angData.activity_out) ? activityIndicatorOut[i].classList.add('on') : activityIndicatorOut[i].classList.remove('on');
@@ -94,7 +161,6 @@ socket.on('ang_data', (data) => {
 function slidePanel(num){
     panelIndex = panelIndex + num;
     let panelsLength = contentPanels.length;
-    console.log('panelIndex', panelIndex);
     for (let i = 0; i < panelsLength; i++) {
         if(i === panelIndex) {
             contentPanels[i].classList.add('current');
@@ -183,24 +249,49 @@ btnLogo.addEventListener("click", () => {
 });
 
 btnHome.addEventListener("click", () => { 
-    console.log("home click"); 
     panelIndex = 0;
     slidePanel(0);
 });
 
 btnPrev.addEventListener("click", () => { 
-    console.log("prev click"); 
     slidePanel(-1);
 });
 
 btnNext.addEventListener("click", () => { 
-    console.log("next click"); 
     slidePanel(1);
 });
 
-btnAdmin.addEventListener("click", () => { console.log("admin click"); });
+btnAdmin.addEventListener("click", () => { 
+    adminPanels.classList.add('show');
+ });
 
+btnAdminClose.addEventListener("click", () => {
+    adminPanels.classList.remove('show');
+});
+
+btnAdminLogin.addEventListener("click", () => {
+    let name = document.getElementById("adminName");
+    let pass = document.getElementById("adminPass");
+    if(name.value === users[0].username && pass.value === users[0].password) {
+        console.log("login successful");
+        adminPanels.classList.remove('show');
+    } else {
+        console.log('login error');
+    }
+    
+});
 
 aboutClose.addEventListener("click", () => { 
     aboutPanel.classList.remove('show');
  });
+
+var users = [];
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        users = myObj.users;
+    }
+};
+xhr.open("GET", "@__PATHVAR__@js/user.json", true);
+xhr.send();

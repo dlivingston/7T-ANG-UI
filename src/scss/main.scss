@@ -128,6 +128,87 @@ button.admin {
     height: calc(100vh - 45px);
     overflow: hidden;
 }
+.admin-panels {
+    position: relative;
+    height: calc(100vh - 45px);
+    overflow: hidden;
+    background-color: $shark;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    transition: transform 0.3s linear;
+    &.show {
+        transform: translateY(0%);
+    }
+}
+#admin-login {
+    min-width: 320px;
+    width: 100%;
+    min-height: 196px;
+    height: 196px;
+    
+    .admin-header {
+        background-color: $crimson;
+        padding: 8px 15px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+            display: inline-block;
+        }
+        .btn-close {
+            background: transparent;
+            border: 0;
+            position: absolute;
+            right: 5px;
+            top: 4px;
+        }
+    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 34px);
+        justify-content: flex-start;
+        h3 {
+            margin: 8px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    input[type=text], input[type=password] {
+        width: 280px;
+        background-color: $river-bed;
+        color: $white;
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 5px;
+        border: none;
+        height: 38px;
+        padding: 0 14px;
+        margin: 0 auto 5px;
+        display: inline-block;
+        box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.75);
+    }
+    button.submit {
+        border: 1px solid $white;
+        background-color: transparent;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+        color: $white;
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 5px auto 5px;
+    }
+}
 .panel {
     position: absolute;
     min-width: 320px;
@@ -252,11 +333,46 @@ button.admin {
     .connection-status {
         width: 20px;
         height: 20px;
-        &.connected {
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCA0Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDpsaW1lO308L3N0eWxlPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjggLTgpIj48cmVjdCBjbGFzcz0iYSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjggOCkiLz48cmVjdCBjbGFzcz0iYSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYgOCkiLz48cmVjdCBjbGFzcz0iYSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQgOCkiLz48L2c+PC9zdmc+);
-            background-position: center;
-            background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        svg.loading-lights {
+            width: 20px;
+            height: 4px;
+            rect.light {
+                fill: $dusty-gray;
+            }
         }
+
+        &.on {
+            svg.loading-lights rect.light {
+                fill: $green;
+            }
+        }
+        &.connecting {
+            svg.loading-lights rect.light {
+                fill: $green;
+                animation-name: blink;
+                animation-duration: 1.4s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: both;
+                &:nth-child(2) {
+                    animation-delay: .2s;
+                }
+                &:nth-child(3) {
+                    animation-delay: .4s;
+                }
+            }
+        }
+        &.error {
+            svg.loading-lights rect.light {
+                fill: $red;
+                animation-name: blink;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: both;
+            }
+        }
+
     }
     .led-display {
         border: 1px solid $dove-gray;
@@ -482,6 +598,15 @@ button.admin {
         align-content: flex-start;
         flex-wrap: wrap;
     }
+    .admin-panels {
+        margin-top: 68px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
     .panel {
         max-width: 320px;
         border-radius: 5px;
@@ -497,5 +622,29 @@ button.admin {
 @media screen and (min-width: 1280px) {
     .main {
         left: calc(50% - 640px);
+    }
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
     }
 }
